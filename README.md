@@ -35,6 +35,98 @@ cd api-note-app
 npm start
 ```
 
+## Usage
+Start the server: `npm start`
+Use the API to perform CRUD operations on notes. See the API documentation for details.
+
+## API Documentation
+### Create a new note
+Creates a new note.
+
+#### Request
+
+- Method : `POST`
+- URL: `/api/notes`
+- Headers: `Content-Type: application/json`
+- Body: `{ "title": "Note title", "description": "Note description" }`
+
+#### Response
+```JSON 
+Status code: 201 Created
+Body: { "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }
+```
+
+### Get all notes
+Retrieves all notes.
+
+#### Request
+
+- Method: `GET`
+- URL: `/api/notes`
+
+### Response
+```JSON 
+Status code: 200 OK, 
+Body: [{ "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }]
+```
+
+### Get a note by ID
+Retrieves a note by its ID.
+
+#### Request
+
+- Method: `GET`
+- URL: `/api/notes/:id`
+
+#### Response
+```JSON 
+Status code: 200 OK
+Body: { "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }
+```
+
+### Update a note
+Updates a note by its ID.
+
+#### Request
+- Method: `PUT`
+- URL: `/api/notes/:id`
+- Headers: `Content-Type: application/json`
+- Body: `{ "title": "New note title", "description": "New note description" }`
+
+#### Response
+```JSON 
+Status code: 200 OK
+Body: { message: "Note was updated successfully." }
+```
+
+### Delete a note
+Deletes a note by its ID.
+
+#### Request
+
+- Method: `DELETE`
+- URL: `/api/notes/:id`
+
+#### Response: 
+```JSON 
+Status code: 200 Ok 
+Body: { message: "Note was deleted successfully!" }
+```
+
+### Delete all notes
+Deletes all notes.
+
+#### Request
+
+- Method: `DELETE`
+- URL: `/api/notes`
+
+#### Response 
+```JSON 
+Status code: 200 Ok 
+Body : {message: `[NumberDeletedDataCount] Notes were deleted successfully!`}
+```
+
 ## High Level Overview
 there's a high-level overview of how the program flow works from file to file in the `api-note-app` repository:
 

@@ -51,7 +51,7 @@ Creates a new note.
 - Body: `{ "title": "Note title", "description": "Note description" }`
 
 #### Response
-```JSON 
+```BASH
 Status code: 201 Created
 Body: { "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }
 ```
@@ -65,7 +65,7 @@ Retrieves all notes.
 - URL: `/api/notes`
 
 ### Response
-```JSON 
+```BASH 
 Status code: 200 OK, 
 Body: [{ "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }]
 ```
@@ -79,7 +79,7 @@ Retrieves a note by its ID.
 - URL: `/api/notes/:id`
 
 #### Response
-```JSON 
+```BASH 
 Status code: 200 OK
 Body: { "id": "note ID", "title": "Note title", "description": "Note description", "createdAt": "Timestamp", "updatedAt": "Timestamp" }
 ```
@@ -94,7 +94,7 @@ Updates a note by its ID.
 - Body: `{ "title": "New note title", "description": "New note description" }`
 
 #### Response
-```JSON 
+```BASH 
 Status code: 200 OK
 Body: { message: "Note was updated successfully." }
 ```
@@ -108,7 +108,7 @@ Deletes a note by its ID.
 - URL: `/api/notes/:id`
 
 #### Response: 
-```JSON 
+```BASH 
 Status code: 200 Ok 
 Body: { message: "Note was deleted successfully!" }
 ```
@@ -122,7 +122,7 @@ Deletes all notes.
 - URL: `/api/notes`
 
 #### Response 
-```JSON 
+```BASH 
 Status code: 200 Ok 
 Body : {message: `[NumberDeletedDataCount] Notes were deleted successfully!`}
 ```
@@ -131,7 +131,7 @@ Body : {message: `[NumberDeletedDataCount] Notes were deleted successfully!`}
 there's a high-level overview of how the program flow works from file to file in the `api-note-app` repository:
 
 - The `server.js` file is the entry point of the application. It imports the necessary dependencies, connects to the MongoDB database using Mongoose, and sets up a basic HTTP server using Express.
-- The `server.js` file then sets up a few middleware functions using `app.use()` to handle CORS, JSON parsing, and URL-encoded data.
+- The `server.js` file then sets up a few middleware functions using `app.use()` to handle CORS, BASH parsing, and URL-encoded data.
 - The `server.js` file defines a basic route using `app.get()` to serve a welcome message at the root URL.
 - The `server.js` file requires the note.routes.js file and passes the app object to it, allowing the routes defined in `note.routes.js` to be registered with the Express application.
 - The `note.routes.js` file requires the note.controller.js file and sets up several HTTP routes using router.post(), `router.get()`, `router.put()`, and `router.delete()`. Each route maps to a specific function in the note.controller.js file.
